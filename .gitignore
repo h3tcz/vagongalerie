@@ -15,3 +15,10 @@
 /log/*
 !/log/.keep
 /tmp
+
+config/deploy/production.rb
+
+# local image storage
+public/system/*
+
+/tags

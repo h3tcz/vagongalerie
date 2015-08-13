@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title
+      | Vagon Galerie
+    = analytics_init if Rails.env.production?
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+    = favicon_link_tag 'favicon.ico'
+
+  body
+    .container-fluid
+      .col-sm-1.col-md-2.col-lg-2
+
+      .col-xs-12.col-sm-10.col-md-8.col-lg-8
+        = render 'layouts/header'
+
+        = yield
+
+      .col-sm-1.col-md-2.col-lg-2
+
+    .container-fluid
+      hr
+      .center
+        | © H3T architekti. All rights reserved.
+
+  .scrollToTop
