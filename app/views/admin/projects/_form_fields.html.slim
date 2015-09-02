@@ -12,6 +12,11 @@
       = f.input :published
       = f.input :slug, disabled: true
       = f.input :title
+      = f.input :author
+      = f.input :title_picture
+      - if f.object.title_picture?
+        = link_to f.object.title_picture.url, class: 'fancybox' do
+          = image_tag f.object.title_picture.url(:thumb)
       = f.input :content, input_html: { class: 'ckeditor' }
 
     #gallery.tab-pane.fade

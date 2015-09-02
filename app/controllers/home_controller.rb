@@ -3,5 +3,7 @@ class HomeController < ApplicationController
 
   # new homepage is going to be in here
   def index
+    @projects = Project.all
+    @static_pages = StaticPage.published
   end
 end

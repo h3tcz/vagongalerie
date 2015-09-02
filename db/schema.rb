@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150902191753) do
+ActiveRecord::Schema.define(version: 20150902201610) do
 
   create_table "pictures", force: :cascade do |t|
     t.string   "image_file_name",    limit: 255
@@ -26,13 +26,17 @@ ActiveRecord::Schema.define(version: 20150902191753) do
   add_index "pictures", ["project_id"], name: "index_pictures_on_project_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
-    t.string   "title",      limit: 255
-    t.text     "content",    limit: 65535
-    t.string   "author",     limit: 255
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.string   "slug",       limit: 255
-    t.boolean  "published",  limit: 1
+    t.string   "title",                      limit: 255
+    t.text     "content",                    limit: 65535
+    t.string   "author",                     limit: 255
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+    t.string   "slug",                       limit: 255
+    t.boolean  "published",                  limit: 1
+    t.string   "title_picture_file_name",    limit: 255
+    t.string   "title_picture_content_type", limit: 255
+    t.integer  "title_picture_file_size",    limit: 4
+    t.datetime "title_picture_updated_at"
   end
 
   create_table "static_pages", force: :cascade do |t|
