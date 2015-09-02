@@ -1,0 +1,12 @@
+class CreateStaticPages < ActiveRecord::Migration
+  def change
+    create_table :static_pages do |t|
+      t.string :slug
+      t.string :title
+      t.text :content
+      t.boolean :published
+
+      t.timestamps null: false
+    end
+  end
+end

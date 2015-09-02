@@ -3,8 +3,8 @@
     = image_tag 'logo.png', width: 90, class: 'pull-left'
 
   ul.pull-right.menu
-    / = menu_link_to("DOMŮ", root_path, 'home', 'homepage')
-    / = menu_link_to("PROJEKTY", projects_path, 'projects', ['index','show'])
+    = menu_link_to("DOMŮ", root_path, 'home', 'homepage')
+    = menu_link_to("GALERIE", projects_path, 'projects', ['index','show'])
     / - StaticPage.published.each do |page|
     /   = menu_link_to(page.title_cz, "#{root_path}##{page.slug_cz}")
 

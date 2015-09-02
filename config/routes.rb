@@ -15,6 +15,9 @@ Rails.application.routes.draw do
     resources :home, only: [:index]
 
     resources :users
-    # resources :static_pages
+    resources :static_pages
+    resources :projects do
+      get :search, on: :collection
+    end
   end
 end
