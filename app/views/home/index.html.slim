@@ -1,18 +1,18 @@
 .index
-  .col-md-12.gallery
+  .col-md-9.gallery
     - @projects.each_with_index do |project, index|
       .index_picture
         - if project.published
           = link_to project_path(id: project.slug) do
-            = image_tag project.title_picture.url(:medium), width: 192
+            = image_tag project.title_picture.url(:large), width: 192
         - else
-          = image_tag 'stvorec.png', width: 192
+          .placeholder_grey
 
-  .col-md-12
+  .col-md-9
     - @static_pages.each do |page|
       hr
       .center id="#{page.slug}"
-        h3
+        h3.static_title
           = page.title
         br
         = raw page.content

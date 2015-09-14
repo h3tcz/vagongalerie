@@ -57,6 +57,6 @@ class Admin::ProjectsController < AdminController
   end
 
   def premitted_params
-    params.permit(project: [:published, :slug, :title, :author, :content, :pictures_attributes => [:id, :image, :_destroy]])
+    params.permit(project: [:published, :slug, :title, :author, :content, :title_picture, :pictures_attributes => [:id, :image, :_destroy]])
   end
 end

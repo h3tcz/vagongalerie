@@ -1,0 +1,18 @@
+.show
+  .col-md-9.gallery
+    .center
+      h1
+        = @project.author
+      h3.project_title
+        = @project.title
+      br
+      = raw @project.content
+
+
+    - @project.pictures.each do |picture|
+      .index_picture
+        - if picture.image
+          = link_to(picture.image.url, class: 'fancybox', rel: 'project_gallery') do
+            = image_tag picture.image.url(:large), width: 192
+        - else
+          = image_tag 'stvorec.png', width: 192

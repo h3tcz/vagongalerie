@@ -7,6 +7,6 @@ class ProjectsController < ApplicationController
   private
 
   def find_project
-    @project = Project.find_by_slug_cz(params[:id])
+    @project = Project.find_by_slug(params[:id])
   end
 end
