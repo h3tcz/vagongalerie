@@ -21,4 +21,12 @@ class Project < ActiveRecord::Base
   validates_attachment_size :title_picture,
                             less_than: 3.megabytes,
                             message: :only_less_than_3_mb
+
+  def next
+    Project.published.where("id > ?", id).first || Project.first
+  end
+
+  def prev
+    Project.published.where("id < ?", id).last || Project.last
+  end
 end

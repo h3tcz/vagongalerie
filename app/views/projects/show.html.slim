@@ -2,7 +2,9 @@
   .col-md-9.gallery
     .center
       h1
+        = link_to '<<', project_path(id: @project.prev.slug), class: 'previous'
         = @project.author
+        = link_to '>>', project_path(id: @project.next.slug), class: 'next'
       h3.project_title
         = @project.title
       br
