@@ -6,3 +6,4 @@
 //= require application/init
 //= require application/images
 //= require application/scroll_top
+//= require application/sticky_menu

@@ -1,4 +1,4 @@
-ul.menu
+ul.menu#sticky_menu
   - StaticPage.published.each do |page|
     .row
       = menu_link_to(page.title, "#{root_path}##{page.slug}")
