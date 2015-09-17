@@ -1,10 +1,19 @@
 .show
   .col-md-9.gallery
+    .row
+      .col-md-1
+        = link_to project_path(id: @project.prev.slug), class: 'previous' do
+          h1
+            | <<
+      .col-md-10
+        h1.author_text
+          = @project.author
+      .col-md-1
+        = link_to project_path(id: @project.next.slug), class: 'next' do
+          h1
+            | >>
+
     .center
-      h1
-        = link_to '<<', project_path(id: @project.prev.slug), class: 'previous'
-        = @project.author
-        = link_to '>>', project_path(id: @project.next.slug), class: 'next'
       h3.project_title
         = @project.title
       br

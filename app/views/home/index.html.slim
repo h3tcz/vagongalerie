@@ -1,10 +1,14 @@
 .index
   .col-md-9.gallery
-    - @projects.each_with_index do |project, index|
+    - @projects.each do |project|
       .index_picture
         - if project.published
+          = image_tag project.title_picture.url(:large), width: 192
+
           = link_to project_path(id: project.slug) do
-            = image_tag project.title_picture.url(:large), width: 192
+            .picture_overlay
+              .text
+                = project.author
         - else
           .placeholder_grey
 
