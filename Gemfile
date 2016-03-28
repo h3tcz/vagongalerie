@@ -4,7 +4,7 @@ ruby '2.1.2'
 
 gem 'rails', '4.2.1'
 
-gem 'mysql2'
+gem 'pg'
 
 gem 'simple_form'
 gem 'paperclip'
@@ -30,6 +30,8 @@ gem 'jquery-easing-rails'
 
 gem 'google-analytics-rails'
 
+gem 'puma'
+
 group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano-passenger'
@@ -37,6 +39,5 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'thin'
   gem 'better_errors'
 end
