@@ -22,3 +22,4 @@ config/deploy/production.rb
 public/system/*
 
 /tags
+.DS_Store
